@@ -11,6 +11,7 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // Using an enumeration for rolename
     @Enumerated(EnumType.STRING)
     @NaturalId
     @Column(length = 60)
@@ -18,10 +19,12 @@ public class Role {
 
     public Role() { }
 
+    // Constructor
     public Role(RoleName name) {
         this.name = name;
     }
 
+    // Getter and Setters
     public Long getId() {
         return id;
     }
