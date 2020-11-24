@@ -1,5 +1,6 @@
 package com.bae.blog.tracker.model;
 
+import com.bae.blog.tracker.model.audit.DateAudit;
 import org.hibernate.annotations.NaturalId;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -97,5 +98,13 @@ public class User extends DateAudit {
 
         public void setPassword(String password) {
                 this.password = password;
+        }
+
+        public Set<Role> getRoles() {
+                return roles;
+        }
+
+        public void setRoles(Set<Role> roles) {
+                this.roles = roles;
         }
 }
